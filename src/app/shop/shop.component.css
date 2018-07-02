@@ -1,0 +1,79 @@
+.shop-search-logo {
+  width: 120px;
+}
+
+.shop-logo-container {
+  margin-top: 6vh;
+  text-align: center;
+}
+
+.shop-lowerBox {
+  position: fixed;
+  bottom: 0;
+  height: 30vh;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -3px 6px #d9d9d9;
+  z-index: 1;
+}
+
+.search-container {
+  text-align: center;
+  margin-top: 6vh;
+}
+
+.shop-search-bar {
+  border: none;
+  box-shadow:  0 0 3px #d7d7d7;
+  width: 500px;
+  height: 60px;
+  vertical-align: top;
+  line-height: 55px;
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+.shop-search-button {
+  width: 60px;
+  height: 60px;
+  background-color: #33c28a;
+  border: none;
+  box-shadow: 0 0 4px #d7d7d7;
+  color: white;
+  font-size: 30px;
+}
+
+.shop-choseBox {
+  width: 60%;
+  height: 30vh;
+  position: fixed;
+  bottom: 15vh;
+  left: 20%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 3px #d7d7d7;
+  z-index: 9999;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shop-img {
+  width: 120px;
+  margin: 0 40px;
+}
+
+.shop-router {
+  text-align: center;
+  width: 50%;
+  font-size: 30px;
+  margin-right:50px;
+  height: 20vh;
+  line-height: 20vh;
+  color: #040404;
+}
+
+.shop-router:nth-child(2) {
+  border-left: 1px solid #c2c2c2;
+}

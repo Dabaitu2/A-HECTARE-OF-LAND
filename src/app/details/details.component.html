@@ -1,0 +1,44 @@
+<div class="detail-main">
+  <h1 class="detail-header">商品详情</h1>
+  <div class="detail-detail" *ngIf="product">
+    <div class="detail-left">
+      <div class="detail-hotProducts-img-container">
+        <img src="../../assets/county04.png" alt="product" class="detail-hotProducts-img">
+      </div>
+      <p class="detail-left-other-info">
+        <span><i class="anticon anticon-star yellow"></i> 收藏农产品({{product.popular}}人气)</span>
+        <span><i class="anticon anticon-like-o blue"></i> 分享</span></p>
+    </div>
+    <div class="detail-right">
+        <h1>{{product.desc}}</h1>
+        <div class="detail-right-price-panel">
+          <span>价格<span class="detail-price">￥{{product.lowest.toFixed(2)}}-￥{{product.highest.toFixed(2)}}</span></span>
+          <div class="detail-nums-group">
+            <span class="detail-nums"><span>{{product.commentsNum}}</span><span>累计评论</span></span>
+            <span class="detail-nums"><span>{{product.sellingNum}}</span><span>交易成功</span></span>
+          </div>
+        </div>
+        <div class="detail-right-type detail-general">
+          <span>颜色分类</span>
+          <ul>
+            <li *ngFor="let v of product.type">{{v}}</li>
+          </ul>
+        </div>
+      <div class="detail-right-type detail-general">
+        <span>规格</span>
+        <ul>
+          <li *ngFor="let v of product.specifications">{{v}}</li>
+        </ul>
+      </div>
+      <div class="detail-right-num detail-general">
+        <span>数量 </span>
+        <nz-input-number [(ngModel)]='buyNum' [nzMin]="1" [nzMax]="product.inStore" [nzStep]="1"></nz-input-number> 件
+        (库存{{product.inStore}}件)
+      </div>
+      <div class="detail-ops">
+        <button class="orange detail-buttons" routerLink="/shoppingCart/1">立即购买</button>
+        <button class="orange detail-buttons">加入购物车</button>
+      </div>
+    </div>
+  </div>
+</div>

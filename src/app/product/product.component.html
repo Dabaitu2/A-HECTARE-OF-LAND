@@ -1,0 +1,35 @@
+<div class="product-main">
+  <h1>农产品</h1>
+  <div class="product-sort">
+    <span [ngClass]="{isActive: activeNum===0}">综合排序</span>
+    <span [ngClass]="{isActive: activeNum===1}">人气</span>
+    <span [ngClass]="{isActive: activeNum===2}">销量</span>
+    <span [ngClass]="{isActive: activeNum===3}">信用</span>
+    <span [ngClass]="{isActive: activeNum===4}">价格</span>
+    <span [ngClass]="{isActive: activeNum===5}">发货地</span>
+  </div>
+  <div class="product-list">
+    <ul *ngIf="hotProducts" class="product-list-detail">
+      <li *ngFor="let product of hotProducts" class="product-list-item" routerLink="/details/{{product.id}}">
+        <div>
+          <img src="../../assets/county04.png" alt="image">
+        </div>
+        <div class="product-list-desc">{{product.desc}}</div>
+        <div class="product-list-other">
+          <span class="product-price">￥ {{product.lowest}}</span>
+          <span>销量: {{product.sellingNum}}</span>
+        </div>
+      </li>
+      <li *ngFor="let product of hotProducts" class="product-list-item" routerLink="/details/{{product.id}}">
+        <div>
+          <img src="../../assets/county04.png" alt="image">
+        </div>
+        <div class="product-list-desc">{{product.desc}}</div>
+        <div class="product-list-other">
+          <span class="product-price">￥ {{product.lowest}}</span>
+          <span>销量: {{product.sellingNum}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

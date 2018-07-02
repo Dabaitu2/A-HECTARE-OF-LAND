@@ -1,0 +1,24 @@
+<div class="login-main">
+  <form nz-form  class="login-form">
+    <h2>用户登录</h2>
+    <nz-form-item>
+        <nz-input-group nzPrefixIcon="anticon anticon-user">
+          <input type="text" nz-input placeholder="请输入用户名">
+        </nz-input-group>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-input-group nzPrefixIcon="anticon anticon-lock">
+          <input type="password" nz-input  placeholder="请输入密码d">
+        </nz-input-group>
+    </nz-form-item>
+    <nz-form-item>
+        <label nz-checkbox >
+          <span>记住密码</span>
+        </label>
+        <a class="login-form-forgot">忘记密码</a>
+        <button nz-button class="login-form-button" [nzType]="'primary'">登录</button>
+        或者
+        <a routerLink="/register">现在注册!</a>
+    </nz-form-item>
+  </form>
+</div>

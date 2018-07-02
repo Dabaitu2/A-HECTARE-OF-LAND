@@ -1,0 +1,56 @@
+<div class="county-main">
+  <h1 class="county-header">特色农户</h1>
+  <div class="county-panel">
+    <div class="county-tab">
+      <div class="county-sort">
+        <span class="{{sort==='default'?'active':''}}">默认排序</span>
+        <span class="{{sort==='sellingNum'?'active':''}}">销量</span>
+        <span class="{{sort==='credit'?'active':''}}">信用</span>
+      </div>
+      <div class="county-type-sort">
+        <span>村户类型</span>
+        <span>所在地</span>
+        <span>指定筛选</span>
+        <span>好评率</span>
+        <span>< {{current}}/{{total}} ></span>
+      </div>
+    </div>
+    <div class="county-check-group">
+      <label nz-checkbox [(ngModel)]="hasBought">收藏和购买过</label>
+      <label nz-checkbox [(ngModel)]="special">特色村户</label>
+    </div>
+    <div class="county-detail" *ngFor="let county of counties">
+      <div class="county-left">
+        <div class="county-abbr-img">
+          <img src="../../assets/county03.png" alt="">
+        </div>
+        <div class="county-abbr-detail">
+          <h3><b>{{county.name}}</b></h3>
+          <h4 class="county-name">卖家: <span class="county-emphasis">{{county.name}}</span>
+            {{county.province}} {{county.city}}
+          </h4>
+          <span>主营: </span>
+          <ul class="county-sell-list">
+            <li *ngFor="let sell of county.mainSell">{{sell}}</li>
+          </ul>
+        </div>
+        <p class="county-abbr-other">
+          <span class="county-selling-num">销量: {{county.sellingNum}}</span>
+          <span>共<span class="county-products-num"> {{county.productsNum}} </span>件产品</span>
+        </p>
+        <i class="anticon anticon-bars county-button-large"></i>
+      </div>
+      <div class="county-right">
+        <div *ngFor="let item of hotProducts" class="county-hotProducts-img-container">
+        <img
+          src="../../assets/county04.png"
+          class="county-hotProducts-img"
+          alt="{{item.name}}">
+          <h4><a routerLink="/details/{{item.id}}" class="county-emphasis">￥{{item.lowest.toFixed(2)}}</a></h4>
+        </div>
+        <h4 class="county-emphasis county-align-right">找相似村户></h4>
+      </div>
+    </div>
+  </div>
+</div>
+
